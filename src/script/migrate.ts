@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import type { Config } from 'drizzle-kit';
 import { migrate } from 'drizzle-orm/node-postgres/migrator';
-import { db } from '../drizzle/connection';
+import { client, db } from '../drizzle/connection';
 
 export default {
   schema: './src/drizzle/schema.ts',
@@ -12,5 +12,6 @@ export default {
 
 (async () => {
     await migrate(db, { migrationsFolder: './src/drizzle'})
+    process.exit()
   }
 )()
