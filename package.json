@@ -2,11 +2,14 @@
 	"engines": {
 		"node": ">=18.14.1"
 	},
+	"license": "MIT",
 	"scripts": {
 		"dev": "tsx watch src/index.ts",
+		"start": "tsx src/index.ts",
 		"db:generate": "npx drizzle-kit generate:pg",
 		"db:drop": "npx drizzle-kit drop",
-		"db:migrate": "npx tsx src/script/migrate.ts"
+		"db:migrate": "npx tsx src/script/migrate.ts",
+		"db:studio": "npx drizzle-kit studio"
 	},
 	"dependencies": {
 		"@hono/node-server": "^1.11.1",
@@ -20,6 +23,7 @@
 	"devDependencies": {
 		"@types/node": "^20.11.17",
 		"@types/pg": "^8.11.6",
+		"@types/uuid": "^9.0.8",
 		"drizzle-kit": "^0.20.18",
 		"tsx": "^4.7.1"
 	}
